@@ -1,0 +1,87 @@
+<br>
+<div class="container" >
+    <div class="card-header">
+        <div id="pfname1"></div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-7">
+                    <!-- <span class="badge badge-pill badge-primary">Edit</span>
+                    <span class="badge badge-pill badge-danger"></span>
+                    <br><br> -->
+
+                        <ul class="list-group" id="p1"></ul>
+                        <br>
+                    <!-- <a class="btn btn-primary" target="_blank"href="">Subject</a> -->
+            </div>
+            <div class="col-md-5">
+                <img src="avatar.png" width="100%" height="100%">
+             </div>
+       </div>
+    </div>
+</div>
+
+
+<script>
+
+        var token = localStorage.getItem("token");
+        var i = localStorage.getItem("id");
+		var requestData = "json";
+        var resultElement = $('#pfname1');
+        var result=' ';
+
+        var resultElement1 = $('#p1');
+        var result1=' ';
+        var first_name=localStorage.getItem('first_name');
+        var last_name=localStorage.getItem('last_name');
+        var email=localStorage.getItem('email');
+        var dob=localStorage.getItem('dob');
+        var city=localStorage.getItem('city');
+        var state=localStorage.getItem('state');
+        var enrollment_no=localStorage.getItem('enrollment_no');
+        var institute=localStorage.getItem('institute');
+        var department=localStorage.getItem('department');
+        var contact_no=localStorage.getItem('contact_no');
+
+
+
+		//alert(token);
+		$.ajax({
+	
+			url:    "http://grievanceapi.herokuapp.com/api/profile/" ,
+			method: 'GET',
+			data:  { format : requestData },
+			dataType: 'json',
+			headers: {
+						'Authorization': token
+					},
+			success: function (data){
+				if(data.length > 0){
+                  //  var i=id-1;
+                    result += '<h5>' + first_name + ' ' + last_name + '</h5>';
+                    
+                    
+                    result1 += '<li class="list-group-item"><strong>Name: </strong>'+first_name+' '+last_name+'</li>';
+                    // alert(result1);
+                    result1 += '<li class="list-group-item"><strong>Email: </strong>'+email+'</li>';
+                    result1 += '<li class="list-group-item"><strong>Date of Birth: </strong>'+dob+'</li>';
+                    result1 += '<li class="list-group-item"><strong>City: </strong>'+city+'</li>';
+                    result1 += '<li class="list-group-item"><strong>State: </strong>'+state+'</li>';
+                    result1 += '<li class="list-group-item"><strong>institute: </strong>'+institute+'</li>';
+                    result1 += '<li class="list-group-item"><strong>Department: </strong>'+department+'</li>';
+                    result1 += '<li class="list-group-item"><strong>Enrollment Number: </strong>'+enrollment_no+'</li>';
+                    result1 += '<li class="list-group-item"><strong>Contact Number: </strong>'+contact_no+'</li>';
+				}else{
+                    result += '<h3>Data not found!</h3><br>';
+                    result1 += '<h3>Data not found!</h3><br>';
+				}
+	
+                resultElement.html(result);
+
+                resultElement1.html(result1);
+
+	
+			}
+	
+		});
+</script>

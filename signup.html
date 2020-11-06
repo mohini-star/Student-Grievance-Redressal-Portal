@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>signup</title>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!--Additional css -->
+	<link rel="stylesheet" type="text/css" href="signup.css">
+	<!--jquery and javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="signup.js"></script>     
+ 
+  </head>
+  <body>
+<!-- 
+	<div class="card">
+	<div class="card-header text-center">Signup Form</div>
+	<div class="card-body">
+    <form method='POST' enctype="multipart/form-data" id="formsignup">
+	   <div class="form-group boxwidth">
+		<label >Name</label>
+		<div class="form-row">
+		<div class="col">
+		<input type="text" class="form-control" id="first_name" placeholder="First Name" required>
+		</div>
+		<div class="col">
+		<input type="text" class="form-control" id="last_name" placeholder="Last Name" >
+		</div>
+	  </div>
+	</div>
+	  <div class="form-group boxwidth">
+		<label >Enrollment Number</label>
+		<input type="number" class="form-control" id="enrollment_no" placeholder="" required>
+	  </div>
+	  <div class="form-group boxwidth">
+		<label >Institution</label>
+		<input type="text" class="form-control" id="institute" placeholder="" >
+	  </div>
+	  <div class="form-group boxwidth">
+		<label >Date of Birth</label>
+		<input type="date" class="form-control" id="dob" placeholder="" >
+	  </div>
+	  <div class="form-row">
+	  	<div class="col">
+	  		<div class="form-group boxwidth">
+				<label >Department</label>
+				<input type="text" class="form-control" id="department" placeholder="" >
+			  </div> 
+	  	</div>
+	  <div class="col">
+	  		<div class="form-group boxwidth">
+			  <label>Upload an image of institute id</label>
+			  <div class="custom-file">
+				<label class="custom-file-label" for=""></label>
+				<input type="file" class="custom-file-input" id="upload_id" aria-describedby="inputGroupFileAddon01" >
+			  </div>
+	  	</div>	
+	  </div> 
+	 </div>
+
+	  <div class="form-row">
+	  	<div class="col">
+		  <div class="form-group boxwidth" >
+			<label >Contact Number</label>
+			<input type="tel" maxlength="10" class="form-control" id="contact_no" placeholder="" >
+		  </div>
+		</div>
+		<div class="col">  
+			<div class="form-group boxwidth">
+				<label >Email id</label>
+				<input type="email" class="form-control" id="email" placeholder="" >
+			  </div>
+		</div>
+	  </div>	 	  
+	  <div class="form-row">
+	  	<div class="col">
+		  <div class="form-group boxwidth">
+			<label >City</label>
+			<input type="text" class="form-control"  placeholder="" id="city" >
+		  </div>
+		 </div> 
+	  	<div class="col">
+		  <div class="form-group boxwidth" >
+			<label >State</label>
+			<input type="text" class="form-control"  placeholder="" id="state" >
+		  </div>
+		</div>
+	  </div>  
+	  
+	  <div class="form-row">
+	  	<div class="col">
+	  		<div class="form-group boxwidth">
+				<label >Password</label>
+				<input type="Password" class="form-control" id="ps1" placeholder="" required>
+			  </div>
+	  	</div>
+	  	<div class="col">
+	  		 <div class="form-group boxwidth">
+				<label >Confirm Password</label>
+				<input type="Password" class="form-control" id="ps2" placeholder="" required>
+			  </div>
+	  	</div>	 
+	  </div>
+	  <div id="notmatched"></div>
+
+	  <button type="submit" class="btn btn-primary" id="signupsubmit">Submit</button>
+	</form>
+</div>
+</div> -->
+
+
+<div class="wrapper fadeInDown">
+	<div id="formContent">
+		<!-- Tabs Titles -->
+
+		<!-- Icon -->
+		<div class="fadeIn first">
+			<img src="../Frontend_UI/img/logo.jpeg" id="icon" alt="User Icon" height="150" />
+			<h6>Student Login</h6>
+		</div>
+
+		<!-- Login Form -->
+		<form method='POST' enctype="multipart/form-data" id="formsignup">
+			<input type="text" class="fadeIn second" id="us1" name="login" placeholder="Enter Username">
+			<input type="password" class="fadeIn third" id="pass" name="login" placeholder="Enter Password">
+			<input type="submit" class="fadeIn fourth" value="Sign Up" id="signupsubmit">
+		</form>
+
+		<!-- Remind Passowrd -->
+		<div id="formFooter">
+			<div id="m" style="color: red;"></div>
+			<a href="./Login.html"
+				style="text-decoration: none;">Already have account?</a><br>
+		</div>
+
+
+	</div>
+</div>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,10 @@
+label{
+	overflow: hidden;
+}
+.boxwidth{
+	width:100% ;
+}
+.card{
+	width: 50%;
+	margin:5% 25% 5% 25%;
+}

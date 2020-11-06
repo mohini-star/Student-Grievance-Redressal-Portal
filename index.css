@@ -1,0 +1,90 @@
+nav{
+	background-color:#313461;
+}
+.navdiv a:hover{
+	text-decoration: none;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+.content{
+	background-color: #f4f4f4;
+}
+
+#profile{
+	position:absolute;
+	left:0;
+	margin:0 0 0 0;
+	display:none;
+	width:18rem;
+	
+}
+.navcontent{
+	position: absolute;
+	top:3.5rem;
+	left:0;
+	bottom:0;
+	height:100%;
+	width: 100%;
+	z-index: -1;
+	background-color: white;
+}
+.navdiv{
+	text-align: left;
+	float:left;
+	height:100%;
+	width:20%;
+	background-image: url('../Frontend_UI/img/backfoot.png');
+	background-color: #272727;
+	position: relative;
+}
+
+.navdiv a{
+	font-size: 20px;
+	color: white;
+	
+}
+.navdiv a:hover{
+	font-size: 20px;
+	color: white;
+	
+}
+
+.navdiv div{
+	border-bottom-style: solid;
+	border-bottom-color: lightgray;
+}
+
+.content{
+	float: right;
+	height:100%;
+	width:80%;
+	overflow: auto;
+}
+.avatar{
+	margin-top: 1%;
+	margin-left:46%;
+	border-radius:50%;
+	height:150px;
+	width:150px;
+	background-image: url("avatar.png");
+	background-size: cover;
+}
+#blank{
+	border-bottom-style: solid;
+	border-bottom-color: lightgray;
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+}
+
+ul,li{
+	margin-left: 0;
+}
+
+.navbar{
+	position: relative;
+}

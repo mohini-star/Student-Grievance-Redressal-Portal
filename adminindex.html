@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Index</title>
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!--Additional css -->
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" type="text/css" href="adminindex.css">
+  <!--jquery and javascript -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="adminindex.js"></script>
+   <script src=""></script> 
+  <script src="index.js"></script>     
+
+  </head>
+  
+
+  <body>
+  
+ <nav class="navbar navbar-expand-lg navbar-light " style="background-color:#313461;">
+  <a class="navbar-brand text-center" href="#" style="color:white">Grievance Portal</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+   
+    <div class="navbar-nav top-corner">
+      <a class="nav-item nav-link" href="#"><i class="material-icons text-white" data-toggle="tooltip" data-placement="bottom" title="notifications">notifications</i></a>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" >
+         <i class="material-icons text-white" data-toggle="tooltip" data-placement="bottom" title="Profile">person</i>
+        </a> 
+        <!-- <div class="card dropdown-menu"  id="profile">
+            <div class="avatar"></div>
+           
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Username</li>
+            </ul>
+            <div class="card-body text-right">
+              <a href="front_1.html" id="logout" class="card-link">Logout</a> -->
+
+       <!-- for toggling -->
+       <div class="card dropdown-menu"  id="profile">
+        <a href="#" id="profilepage">
+          <div class="avatar"></div>
+         
+          <ul class="list-group list-group-flush"  >
+            <!-- edited to make profile page , id is created-->
+            <a href="#"  id="profilepage1" style="text-decoration: none; color: black;"><li class="list-group-item" id="pfname"></li></a>
+          </ul>
+        </a>   
+          <div class="card-body text-right">
+            <!-- edited to create id for logout -->
+            <a href="../Frontend_UI/index.html" id="logout" class="card-link">Logout</a>
+            </div>
+        </div>         
+      </div>
+    </div>
+  </div>
+</nav>
+<div id="blank"></div>
+  <div class="navcontent">
+    <div class="navdiv" style="	text-align: left;"> 
+    
+      <!-- <a href="" class="sidenav" id="dep">Department Wise <i class="material-icons" data-toggle="tooltip" data-placement="right" title="depart">widgets</i></a><div></div>
+      <a href="" class="sidenav" id="all">Global <i class="material-icons" data-toggle="tooltip" data-placement="right" title="Global">language</i></a><div></div>
+     -->
+     <ul style="list-style: none;">
+      <li><a href="" class="sidenav" id="dep"><i class="fa fa-home"></i> <span id="h1">Department Wise</span></a></li>
+      <li><a href=""class="sidenav" id="all"><i class="fa fa-edit"></i> <span id="h2">Global</span></a></li>
+
+    </ul>
+    </div>
+    <div class="complaincontent">
+      <div class="input-group searchdiv">
+        <!-- for search input -->
+        <input class="form-control" type="search" id="search" placeholder="Search">
+        <div class="input-group-append">
+          <button class="btn btn-outline-success" type="submit"><i class="material-icons">search</i></button>
+        </div>
+        
+      </div>
+      <div id="content2">
+         
+      </div> 
+    </div>
+    </div>  
+  </body>
+</html>

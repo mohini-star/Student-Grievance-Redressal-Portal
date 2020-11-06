@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>complain</title>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!--Additional css -->
+	<link rel="stylesheet" type="text/css" href="complain.css">
+	<!--jquery and javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="complain.js"></script>     
+ 
+  </head>
+  <body>
+	<div class="card">
+	<div class="card-header text-center">Complaint Form</div>
+	<div class="card-body">
+    <form> 
+	  <div class="form-group boxwidth">
+		<label >Choose Category of complain</label>
+		<select class="form-control" id="category" required>
+		  <option>Department Level</option>
+		  <option>Institute/College Level</option>
+		  <option>University Level</option>
+		</select>
+	  </div>
+	  <div class="form-group boxwidth">
+		<label >Choose sub-Category of complain</label>
+		<select class="form-control" id="sub_category" required>
+		  <option>Admission</option>
+		  <option>Finance</option>
+		  <option>Examination</option>
+		  <option>Lecture Timetable/Learning</option>
+		  <option>Paper Reevaluation</option>
+		  <option>Other</option>
+		</select>
+	  </div>
+	  <div class="form-group boxwidth">
+			<label >Subject</label>
+		  	<input type="text" class="form-control" id="subject"  placeholder="" required>
+		</div>
+	  <div class="form-group boxwidth">
+		<label >Description</label>
+		<textarea class="form-control" id="desc" rows="10" required></textarea>
+	  </div>
+	  
+	  <!-- <div class="form-group boxwidth">
+	  <label>Document supporting Complain</label>
+	  <div class="custom-file">
+		<label class="custom-file-label" for="">Upload any image or document</label>
+		<input type="file" class="custom-file-input" id=""  required>
+	  </div>
+	  </div> -->
+	  
+	  <button type="submit" class="btn btn-primary" id="complainsubmit">Submit</button>
+	</form>
+</div>
+</div>
+
+  
+  </body>
+</html>

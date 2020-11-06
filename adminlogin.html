@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Adminlogin</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<!--Additional css -->
+	<link rel="stylesheet" type="text/css" href="login.css">
+	<!--jquery and javascript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- <script src="login.js"></script>       -->
+
+	<!-- edited by Ashutosh -->
+	<script>
+		$(document).ready(function () {
+
+			$('#adminloginform').submit(function (e) {
+				e.preventDefault();
+				var email = document.getElementById("us1").value;
+				var pass = document.getElementById("pass").value;
+				var red = '';
+				var inst = '';
+
+
+				$.ajax({
+					type: "GET",
+					dataType: "json",
+					url: 'http://grievanceapi.herokuapp.com/api/profile/?format=json',
+
+					success: function (data) {
+						$.each(data, function (index, value) {
+							var check = value.email;
+
+							if (email == check) {
+								// window.localStorage.setItem('first_name',value.first_name);
+								// window.localStorage.setItem('last_name',value.last_name);
+								window.localStorage.setItem('id', value.id - 1);
+								window.localStorage.setItem('is_redressal', value.is_redressal);
+								window.localStorage.setItem('dep', value.department);
+								window.localStorage.setItem('inst', value.institute);
+								inst = value.institute;
+								red = value.is_redressal;
+
+								// window.localStorage.setItem('profile_url','http://grievanceapi.herokuapp.com/api/profile/'+value.id+'/');
+
+							}
+
+						});
+
+					},
+					error: function () {
+						alert("error");
+					}
+				});
+				//alert("---------Hii---------"+Username);
+				//alert(window.localStorage.getItem("is_redressal"));
+
+
+				$.ajax({
+					type: 'POST',
+					url: 'http://grievanceapi.herokuapp.com/api/login/',
+					contentType: 'application/json',
+
+					//username as assigned in bakend string
+					data: JSON.stringify({ username: email, password: pass }),
+					success: function (response) {
+						//assign session storage
+						//console.log(email);
+						//alert(response.token);
+						window.localStorage.setItem("login", email);
+						//alert(window.localStorage.getItem("is_redressal"));
+						//alert(red);
+						if (red == false || red == null) {
+							alert("You are not admin");
+							window.location = "../Frontend_UI/index.html";
+						}
+						else {
+							window.localStorage.setItem("token", response.token);
+							window.location = "adminindex.html";
+						}
+
+
+						// console.log(token);
+
+					},
+					error: function (xhr) {
+						console.log(xhr.responseText);
+						var json = JSON.parse(xhr.responseText);
+						document.getElementById("m").innerHTML = json.message;
+
+					}
+				});
+
+
+			});
+		});
+
+	</script>
+	<!-- ./edited by Ashutosh -->
+</head>
+
+<body>
+
+
+	<div class="wrapper fadeInDown">
+		<div id="formContent">
+			<!-- Tabs Titles -->
+
+			<!-- Icon -->
+			<div class="fadeIn first">
+			
+				<img src="../Frontend_UI/img/logo.jpeg" id="icon" alt="User Icon" height="175" />
+				<h6>Admin Login</h6>
+			</div>
+
+			<!-- Login Form -->
+			<form id="adminloginform" method="POST">
+				<input type="text" class="fadeIn second" id="us1" name="login" placeholder="Enter Username">
+				<input type="password" class="fadeIn third" id="pass" name="login" placeholder="Enter Password">
+				<input type="submit" class="fadeIn fourth" value="Log In" id="submit">
+			</form>
+
+			<!-- Remind Passowrd -->
+			<div id="formFooter">
+				<div id="m" style="color: red;"></div>
+				<a href="http://grievanceapi.herokuapp.com/password-reset" style="text-decoration: none;">Forgot Password?</a>
+			</div>
+			
+
+		</div>
+	</div>
+
+</body>
+
+</html>
